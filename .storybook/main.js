@@ -21,11 +21,23 @@ module.exports = {
       "~": path.resolve(__dirname, "../src"),
     };
 
-    // https://github.com/storybookjs/storybook/issues/16690#issuecomment-971579785
+    // 기존 MJS 파일 처리 설정
     config.module.rules.push({
       test: /\.mjs$/,
       include: /node_modules/,
       type: "javascript/auto",
+    });
+
+    // @tanstack/react-virtual을 위한 설정 추가
+    config.module.rules.push({
+      test: /\.(js|jsx|ts|tsx)$/,
+      include: /node_modules\/@tanstack/,
+      use: {
+        loader: require.resolve("babel-loader"),
+        options: {
+          presets: ["@babel/preset-env"],
+        },
+      },
     });
 
     delete config.resolve.alias["emotion-theming"];

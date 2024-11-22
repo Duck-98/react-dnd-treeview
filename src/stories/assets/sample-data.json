@@ -1,0 +1,158 @@
+[
+    {
+      "id": "root",
+      "parent": 0,
+      "droppable": true,
+      "text": "Project Root"
+    },
+    {
+      "id": "dev",
+      "parent": "root",
+      "droppable": true,
+      "text": "Development"
+    },
+    {
+      "id": "frontend",
+      "parent": "dev",
+      "droppable": true,
+      "text": "Frontend"
+    },
+    {
+      "id": "backend",
+      "parent": "dev",
+      "droppable": true,
+      "text": "Backend"
+    },
+    {
+      "id": "mobile",
+      "parent": "dev",
+      "droppable": true,
+      "text": "Mobile"
+    },
+    {
+      "id": "fe-1",
+      "parent": "frontend",
+      "droppable": false,
+      "text": "package.json"
+    },
+    {
+      "id": "fe-2",
+      "parent": "frontend",
+      "droppable": false,
+      "text": "tsconfig.json"
+    },
+    {
+      "id": "fe-src",
+      "parent": "frontend",
+      "droppable": true,
+      "text": "src"
+    },
+    {
+      "id": "fe-components",
+      "parent": "fe-src",
+      "droppable": true,
+      "text": "components"
+    },
+    {
+      "id": "fe-pages",
+      "parent": "fe-src",
+      "droppable": true,
+      "text": "pages"
+    },
+    {
+      "id": "fe-utils",
+      "parent": "fe-src",
+      "droppable": true,
+      "text": "utils"
+    },
+    {
+      "id": "be-1",
+      "parent": "backend",
+      "droppable": false,
+      "text": "package.json"
+    },
+    {
+      "id": "be-2",
+      "parent": "backend",
+      "droppable": false,
+      "text": "tsconfig.json"
+    },
+    {
+      "id": "be-src",
+      "parent": "backend",
+      "droppable": true,
+      "text": "src"
+    },
+    {
+      "id": "be-controllers",
+      "parent": "be-src",
+      "droppable": true,
+      "text": "controllers"
+    },
+    {
+      "id": "be-models",
+      "parent": "be-src",
+      "droppable": true,
+      "text": "models"
+    },
+    {
+      "id": "be-routes",
+      "parent": "be-src",
+      "droppable": true,
+      "text": "routes"
+    },
+    {
+      "id": "mob-1",
+      "parent": "mobile",
+      "droppable": false,
+      "text": "package.json"
+    },
+    {
+      "id": "mob-2",
+      "parent": "mobile",
+      "droppable": false,
+      "text": "app.json"
+    },
+    {
+      "id": "mob-src",
+      "parent": "mobile",
+      "droppable": true,
+      "text": "src"
+    },
+    {
+      "id": "mob-screens",
+      "parent": "mob-src",
+      "droppable": true,
+      "text": "screens"
+    },
+    {
+      "id": "mob-components",
+      "parent": "mob-src",
+      "droppable": true,
+      "text": "components"
+    },
+    {
+      "id": "resources",
+      "parent": "root",
+      "droppable": true,
+      "text": "Resources"
+    },
+    {
+      "id": "images",
+      "parent": "resources",
+      "droppable": true,
+      "text": "Images"
+    },
+    {
+      "id": "docs",
+      "parent": "resources",
+      "droppable": true,
+      "text": "Documents"
+    },
+    {
+      "id": "assets",
+      "parent": "resources",
+      "droppable": true,
+      "text": "Assets"
+    }
+  ]

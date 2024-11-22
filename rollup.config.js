@@ -42,4 +42,5 @@ export default {
       },
     }),
   ],
+  external: ["@tanstack/react-virtual"],
 };

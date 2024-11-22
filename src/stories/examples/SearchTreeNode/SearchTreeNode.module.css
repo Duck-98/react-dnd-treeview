@@ -1,0 +1,46 @@
+/* .treeRoot {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 32px;
+}
+
+.draggingSource {
+  opacity: 0.3;
+}
+
+.dropTarget {
+  background-color: #e8f0fe;
+}
+
+.searchOptions {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  padding: 8px;
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+.searchOptions label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #495057;
+}
+
+.searchStats {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #868e96;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 14px;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  background: white;
+  transition: all 0.2s ease;
+} */

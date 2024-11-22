@@ -152,6 +152,9 @@ export type TreeState<T> = TreeStateBase<T> & {
   dropTargetOffset: number;
   initialOpen: InitialOpen;
   openIds: NodeModel["id"][];
+  virtualizeOptions?: VirtualizeOptions;
+  searchTerm?: string;
+  searchResults?: NodeModel<T>[];
   onDrop: DropHandler<T>;
   canDrop?: CanDropHandler;
   canDrag?: CanDragHandler;
@@ -179,6 +182,9 @@ export type TreeProps<T = unknown> = TreeStateBase<T> & {
   dropTargetOffset?: number;
   initialOpen?: InitialOpen;
   onChangeOpen?: ChangeOpenHandler;
+  virtualizeOptions?: VirtualizeOptions;
+  searchTerm?: string;
+  onSearchResultsChange?: (results: NodeModel<T>[]) => void;
   onDrop: (tree: NodeModel<T>[], options: DropOptions<T>) => void;
   canDrop?: (tree: NodeModel<T>[], options: DropOptions<T>) => boolean | void;
   canDrag?: (node: NodeModel<T> | undefined) => boolean;
@@ -190,3 +196,34 @@ export type TreeMethods = {
   openAll(): void;
   closeAll(): void;
 };
+
+export type SearchHelpers<T> = {
+  getNode: (id: NodeModel["id"]) => NodeModel<T> | undefined;
+  getParent: (id: NodeModel["id"]) => NodeModel<T> | undefined;
+  getChildren: (id: NodeModel["id"]) => NodeModel<T>[];
+  getAllParents: (id: NodeModel["id"]) => NodeModel<T>[];
+  getAllChildren: (id: NodeModel["id"]) => NodeModel<T>[];
+};
+
+export type SearchFunction<T> = (
+  searchTerm: string,
+  node: NodeModel<T>,
+  helpers: SearchHelpers<T>
+) => boolean;
+
+export type TreeSearchOptions<T> = {
+  searchFn?: SearchFunction<T>;
+  includeParents?: boolean;
+  includeChildren?: boolean;
+  minSearchLength?: number;
+  maxResults?: number;
+};
+
+// 가상화 관련 타입
+export interface VirtualizeOptions {
+  enabled: boolean;
+  threshold?: number;
+  itemHeight?: number;
+  overscanCount?: number;
+  containerHeight?: number | string;
+}
