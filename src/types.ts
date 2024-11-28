@@ -219,11 +219,10 @@ export type TreeSearchOptions<T> = {
   maxResults?: number;
 };
 
-// 가상화 관련 타입
 export interface VirtualizeOptions {
   enabled: boolean;
   threshold?: number;
   itemHeight?: number;
-  overscanCount?: number;
+  overscan?: number;
   containerHeight?: number | string;
 }

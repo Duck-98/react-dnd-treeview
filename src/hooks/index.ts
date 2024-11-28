@@ -9,4 +9,3 @@ export { useTreeContext } from "./useTreeContext";
 export { useContainerClassName } from "./useContainerClassName";
 export { useDragHandle } from "./useDragHandle";
 export { useTreeSearch } from "./useTreeSearch";
-export { useVirtualTree } from "./useVirtualTree";

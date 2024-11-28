@@ -108,7 +108,7 @@ export const TreeProvider = <T,>(props: Props<T>): ReactElement => {
       enabled: false,
       threshold: 50,
       itemHeight: 32,
-      overscanCount: 5,
+      overscan: 5,
       containerHeight: "600px",
       ...props.virtualizeOptions,
     },
