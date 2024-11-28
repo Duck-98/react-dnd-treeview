@@ -14,12 +14,33 @@ const defaultSearchFn = <T>(
   return node.text.toLowerCase().includes(searchTerm.toLowerCase());
 };
 
-export function useTreeSearch<T>(
+export const useTreeSearch = <T>(
   tree: NodeModel<T>[],
   searchTerm: string,
   options?: TreeSearchOptions<T>
-) {
-  // 검색 인덱스 생성
+) => {
+  const searchFn = useMemo((): SearchFunction<T> => {
+    return (
+      options?.searchFn ||
+      ((term, node, helpers) => defaultSearchFn(term, node, helpers))
+    );
+  }, [options?.searchFn]);
+
+  const searchOptions = useMemo(
+    () => ({
+      includeParents: options?.includeParents ?? true,
+      includeChildren: options?.includeChildren ?? false,
+      minSearchLength: options?.minSearchLength ?? 2,
+      maxResults: options?.maxResults ?? 1000,
+    }),
+    [
+      options?.includeParents,
+      options?.includeChildren,
+      options?.minSearchLength,
+      options?.maxResults,
+    ]
+  );
+
   const searchIndex = useMemo(() => {
     const nodeMap = new Map(tree.map((node) => [node.id, node]));
     const parentMap = new Map(tree.map((node) => [node.id, node.parent]));
@@ -36,7 +57,6 @@ export function useTreeSearch<T>(
     return { nodeMap, parentMap, childrenMap };
   }, [tree]);
 
-  // 검색 도우미 함수들
   const searchHelpers = useMemo<SearchHelpers<T>>(
     () => ({
       getNode: (id) => searchIndex.nodeMap.get(id),
@@ -79,16 +99,9 @@ export function useTreeSearch<T>(
     [searchIndex]
   );
 
+  // caculate search results
   return useMemo(() => {
-    const {
-      searchFn = defaultSearchFn as SearchFunction<T>,
-      includeParents = true,
-      includeChildren = false,
-      minSearchLength = 2,
-      maxResults = 1000,
-    } = options || {};
-
-    if (!searchTerm || searchTerm.length < minSearchLength) {
+    if (!searchTerm || searchTerm.length < searchOptions.minSearchLength) {
       return {
         matches: [],
         openIds: [],
@@ -101,21 +114,21 @@ export function useTreeSearch<T>(
     const resultIds = new Set<NodeModel["id"]>();
     const matches: NodeModel<T>[] = [];
 
-    // 검색 실행
+    // search start
     for (const node of tree) {
-      if (matches.length >= maxResults) break;
+      if (matches.length >= searchOptions.maxResults) break;
 
       if (searchFn(searchTerm, node, searchHelpers)) {
         matches.push(node);
         resultIds.add(node.id);
 
-        if (includeParents) {
+        if (searchOptions.includeParents) {
           searchHelpers.getAllParents(node.id).forEach((parent) => {
             resultIds.add(parent.id);
           });
         }
 
-        if (includeChildren) {
+        if (searchOptions.includeChildren) {
           searchHelpers.getAllChildren(node.id).forEach((child) => {
             resultIds.add(child.id);
           });
@@ -132,7 +145,16 @@ export function useTreeSearch<T>(
       openIds: Array.from(resultIds),
       filteredTree,
       totalMatches: matches.length,
-      hasMore: matches.length >= maxResults,
+      hasMore: matches.length >= searchOptions.maxResults,
     };
-  }, [tree, searchTerm, options, searchHelpers]);
-}
+  }, [
+    tree,
+    searchTerm,
+    searchFn,
+    searchHelpers,
+    searchOptions.minSearchLength,
+    searchOptions.maxResults,
+    searchOptions.includeParents,
+    searchOptions.includeChildren,
+  ]);
+};
