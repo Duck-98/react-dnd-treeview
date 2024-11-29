@@ -87,10 +87,9 @@ Virtualized.args = {
   tree: generateSearchableTreeData(10000),
   virtualizeOptions: {
     enabled: true,
-
     threshold: 10, // 100개 이상일 때 가상 스크롤 적용
     itemHeight: 32, // 각 아이템 높이
-    overscanCount: 5, // 오버스캔 개수
+    overscan: 5, // 오버스캔 개수
     containerHeight: "100px",
   },
 };
@@ -202,7 +201,7 @@ Advanced.args = {
     enabled: true, // 가상 스크롤 활성화
     threshold: 10, // 100개 이상일 때 가상 스크롤 적용
     itemHeight: 32, // 각 아이템 높이
-    overscanCount: 5, // 오버스캔 개수
+    overscan: 5, // 오버스캔 개수
     containerHeight: "500px",
   },
 };

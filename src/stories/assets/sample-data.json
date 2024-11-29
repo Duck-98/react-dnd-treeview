@@ -1,158 +1,272 @@
 [
-    {
-      "id": "root",
-      "parent": 0,
-      "droppable": true,
-      "text": "Project Root"
-    },
-    {
-      "id": "dev",
-      "parent": "root",
-      "droppable": true,
-      "text": "Development"
-    },
-    {
-      "id": "frontend",
-      "parent": "dev",
-      "droppable": true,
-      "text": "Frontend"
-    },
-    {
-      "id": "backend",
-      "parent": "dev",
-      "droppable": true,
-      "text": "Backend"
-    },
-    {
-      "id": "mobile",
-      "parent": "dev",
-      "droppable": true,
-      "text": "Mobile"
-    },
-    {
-      "id": "fe-1",
-      "parent": "frontend",
-      "droppable": false,
-      "text": "package.json"
-    },
-    {
-      "id": "fe-2",
-      "parent": "frontend",
-      "droppable": false,
-      "text": "tsconfig.json"
-    },
-    {
-      "id": "fe-src",
-      "parent": "frontend",
-      "droppable": true,
-      "text": "src"
-    },
-    {
-      "id": "fe-components",
-      "parent": "fe-src",
-      "droppable": true,
-      "text": "components"
-    },
-    {
-      "id": "fe-pages",
-      "parent": "fe-src",
-      "droppable": true,
-      "text": "pages"
-    },
-    {
-      "id": "fe-utils",
-      "parent": "fe-src",
-      "droppable": true,
-      "text": "utils"
-    },
-    {
-      "id": "be-1",
-      "parent": "backend",
-      "droppable": false,
-      "text": "package.json"
-    },
-    {
-      "id": "be-2",
-      "parent": "backend",
-      "droppable": false,
-      "text": "tsconfig.json"
-    },
-    {
-      "id": "be-src",
-      "parent": "backend",
-      "droppable": true,
-      "text": "src"
-    },
-    {
-      "id": "be-controllers",
-      "parent": "be-src",
-      "droppable": true,
-      "text": "controllers"
-    },
-    {
-      "id": "be-models",
-      "parent": "be-src",
-      "droppable": true,
-      "text": "models"
-    },
-    {
-      "id": "be-routes",
-      "parent": "be-src",
-      "droppable": true,
-      "text": "routes"
-    },
-    {
-      "id": "mob-1",
-      "parent": "mobile",
-      "droppable": false,
-      "text": "package.json"
-    },
-    {
-      "id": "mob-2",
-      "parent": "mobile",
-      "droppable": false,
-      "text": "app.json"
-    },
-    {
-      "id": "mob-src",
-      "parent": "mobile",
-      "droppable": true,
-      "text": "src"
-    },
-    {
-      "id": "mob-screens",
-      "parent": "mob-src",
-      "droppable": true,
-      "text": "screens"
-    },
-    {
-      "id": "mob-components",
-      "parent": "mob-src",
-      "droppable": true,
-      "text": "components"
-    },
-    {
-      "id": "resources",
-      "parent": "root",
-      "droppable": true,
-      "text": "Resources"
-    },
-    {
-      "id": "images",
-      "parent": "resources",
-      "droppable": true,
-      "text": "Images"
-    },
-    {
-      "id": "docs",
-      "parent": "resources",
-      "droppable": true,
-      "text": "Documents"
-    },
-    {
-      "id": "assets",
-      "parent": "resources",
-      "droppable": true,
-      "text": "Assets"
+  {
+    "id": 1,
+    "parent": 0,
+    "droppable": true,
+    "text": "Project Alpha"
+  },
+  {
+    "id": 2,
+    "parent": 1,
+    "droppable": true,
+    "text": "Frontend"
+  },
+  {
+    "id": 3,
+    "parent": 2,
+    "droppable": true,
+    "text": "src"
+  },
+  {
+    "id": 4,
+    "parent": 3,
+    "droppable": true,
+    "text": "components"
+  },
+  {
+    "id": 5,
+    "parent": 4,
+    "droppable": true,
+    "text": "common"
+  },
+  {
+    "id": 6,
+    "parent": 5,
+    "text": "Button.tsx",
+    "data": {
+      "fileType": "typescript",
+      "fileSize": "2.1KB"
     }
-  ]
+  },
+  {
+    "id": 7,
+    "parent": 5,
+    "text": "Input.tsx",
+    "data": {
+      "fileType": "typescript",
+      "fileSize": "1.8KB"
+    }
+  },
+  {
+    "id": 8,
+    "parent": 4,
+    "droppable": true,
+    "text": "layout"
+  },
+  {
+    "id": 9,
+    "parent": 8,
+    "text": "Header.tsx",
+    "data": {
+      "fileType": "typescript",
+      "fileSize": "3.2KB"
+    }
+  },
+  {
+    "id": 10,
+    "parent": 8,
+    "text": "Footer.tsx",
+    "data": {
+      "fileType": "typescript",
+      "fileSize": "2.8KB"
+    }
+  },
+  {
+    "id": 11,
+    "parent": 4,
+    "droppable": true,
+    "text": "features"
+  },
+  {
+    "id": 12,
+    "parent": 11,
+    "droppable": true,
+    "text": "auth"
+  },
+  {
+    "id": 13,
+    "parent": 12,
+    "text": "Login.tsx",
+    "data": {
+      "fileType": "typescript",
+      "fileSize": "4.5KB"
+    }
+  },
+  {
+    "id": 14,
+    "parent": 12,
+    "text": "Register.tsx",
+    "data": {
+      "fileType": "typescript",
+      "fileSize": "5.1KB"
+    }
+  },
+  {
+    "id": 15,
+    "parent": 3,
+    "droppable": true,
+    "text": "hooks"
+  },
+  {
+    "id": 16,
+    "parent": 15,
+    "text": "useAuth.ts",
+    "data": {
+      "fileType": "typescript",
+      "fileSize": "1.2KB"
+    }
+  },
+  {
+    "id": 17,
+    "parent": 15,
+    "text": "useForm.ts",
+    "data": {
+      "fileType": "typescript",
+      "fileSize": "2.3KB"
+    }
+  },
+  {
+    "id": 18,
+    "parent": 0,
+    "droppable": true,
+    "text": "Project Beta"
+  },
+  {
+    "id": 19,
+    "parent": 18,
+    "droppable": true,
+    "text": "Backend"
+  },
+  {
+    "id": 20,
+    "parent": 19,
+    "droppable": true,
+    "text": "src"
+  },
+  {
+    "id": 21,
+    "parent": 20,
+    "droppable": true,
+    "text": "controllers"
+  },
+  {
+    "id": 22,
+    "parent": 21,
+    "text": "UserController.ts",
+    "data": {
+      "fileType": "typescript",
+      "fileSize": "6.7KB"
+    }
+  },
+  {
+    "id": 23,
+    "parent": 21,
+    "text": "AuthController.ts",
+    "data": {
+      "fileType": "typescript",
+      "fileSize": "4.9KB"
+    }
+  },
+  {
+    "id": 24,
+    "parent": 20,
+    "droppable": true,
+    "text": "services"
+  },
+  {
+    "id": 25,
+    "parent": 24,
+    "text": "UserService.ts",
+    "data": {
+      "fileType": "typescript",
+      "fileSize": "8.2KB"
+    }
+  },
+  {
+    "id": 26,
+    "parent": 24,
+    "text": "AuthService.ts",
+    "data": {
+      "fileType": "typescript",
+      "fileSize": "5.4KB"
+    }
+  },
+  {
+    "id": 27,
+    "parent": 20,
+    "droppable": true,
+    "text": "models"
+  },
+  {
+    "id": 28,
+    "parent": 27,
+    "text": "User.ts",
+    "data": {
+      "fileType": "typescript",
+      "fileSize": "3.1KB"
+    }
+  },
+  {
+    "id": 29,
+    "parent": 27,
+    "text": "Auth.ts",
+    "data": {
+      "fileType": "typescript",
+      "fileSize": "2.8KB"
+    }
+  },
+  {
+    "id": 30,
+    "parent": 19,
+    "droppable": true,
+    "text": "tests"
+  },
+  {
+    "id": 31,
+    "parent": 30,
+    "droppable": true,
+    "text": "unit"
+  },
+  {
+    "id": 32,
+    "parent": 31,
+    "text": "user.test.ts",
+    "data": {
+      "fileType": "typescript",
+      "fileSize": "4.3KB"
+    }
+  },
+  {
+    "id": 33,
+    "parent": 31,
+    "text": "auth.test.ts",
+    "data": {
+      "fileType": "typescript",
+      "fileSize": "3.9KB"
+    }
+  },
+  {
+    "id": 34,
+    "parent": 30,
+    "droppable": true,
+    "text": "integration"
+  },
+  {
+    "id": 35,
+    "parent": 34,
+    "text": "api.test.ts",
+    "data": {
+      "fileType": "typescript",
+      "fileSize": "7.2KB"
+    }
+  },
+  {
+    "id": 36,
+    "parent": 34,
+    "text": "e2e.test.ts",
+    "data": {
+      "fileType": "typescript",
+      "fileSize": "6.8KB"
+    }
+  }
+]

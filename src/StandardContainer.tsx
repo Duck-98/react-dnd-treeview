@@ -24,7 +24,7 @@ export const StandardContainer = forwardRef(
 
     const nodes = treeContext.tree.filter((l) => l.parent === parentId);
     const view = sortNodes(nodes, treeContext);
-    console.log(parentId, "standard");
+
     return (
       <Component ref={ref} role="list" {...rootProps} className={className}>
         {view.map((node, index) => {
